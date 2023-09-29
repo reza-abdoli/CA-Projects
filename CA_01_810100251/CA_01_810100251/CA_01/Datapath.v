@@ -1,0 +1,191 @@
+module datapath(clk, Done, Fail ,ldxy, ldf, Din, fclr, stackclr, xyclr ,Rs, Rm, Ws, Wm, newX , newY, Move, Run);
+input clk, Din ,ldf, ldxy ,Rs, Rm, Ws, Wm, fclr, stackclr, xyclr, Run;
+output Fail, Done;
+wire [1:0] f,qf;
+wire [3:0] X,Y,backX,backY,m1OutX,m2OutY,qX,qY;
+output [3:0] newX ,newY;
+wire [1:0] pop;
+output [1:0] Move;
+wire RRs,co,r,qdff,Wd,empty;
+progressiveAlu Palu(clk ,f, X, Y, newX , newY);
+regressiveAlu Ralu(clk, pop, X, Y, backX , backY);
+Fregister Freg(clk, fclr, ldf, f, qf);
+adder Myadder(f , qf, qdff);
+mux m1(X, newX, Din, m1OutX);
+mux m2(Y , newY, Din, m2OutY);
+mux mm1(backX, m1OutX, co, qX);
+mux mm2(backY, m2OutY, co, qY);
+dff dmyDff(qdff, fclr, ldf, clk, co);
+pointRegisterX Xpoint(clk, xyclr, ldxy, X, qX);
+pointRegisterY Ypoint(clk, xyclr, ldxy, Y, qY);
+stack myStack(clk, stackclr, pop, f, RRs, Ws, empty);
+direction dir(clk, Move, pop, Run, Wd );
+assign Fail = (~Done & empty);
+assign Done = (&X & ~|Y) ? 1'b1 : 1'b0;
+assign Wd = (Done & ~empty) ? 1'b1 : 1'b0;
+assign RRs = Done | Rs;
+endmodule
+
+module progressiveAlu(clk ,f, X, Y, newX , newY);
+inout [3:0] X, Y;
+input clk;
+input [1:0] f;
+output [3:0] newX , newY;
+reg [3:0] newX , newY;
+always @ (posedge clk or f) begin
+	case (f)
+		2'd0: newX = (X>4'd0) ? X - 1 : X ;
+		2'd1: newY = (Y>4'd0) ? Y - 1 : Y ;
+		2'd2: newY = (Y<4'd15) ? Y + 1 : Y ;
+		2'd3: newX = (X<4'd15) ? X + 1 : X;
+	endcase
+	case (f)
+		2'd0: newY = Y;
+		2'd1: newX = X;
+		2'd2: newX = X;
+		2'd3: newY = Y;
+	endcase
+
+end
+endmodule
+
+module regressiveAlu(clk ,f, X, Y, newX , newY);
+inout [3:0] X, Y;
+input clk;
+input [1:0] f;
+output [3:0] newX , newY;
+reg [3:0] newX , newY;
+always @ (posedge clk or f) begin
+	case (f)
+		2'd0: newX = (X<4'd15) ? X + 1 : X;
+		2'd1: newY = (Y<4'd15) ? Y + 1 : Y ;
+		2'd2: newY = (Y>4'd0) ? Y - 1 : Y;
+		2'd3: newX = (X>4'd0) ? X - 1 : X;
+	endcase
+	case (f)
+		2'd0: newY = Y;
+		2'd1: newX = X;
+		2'd2: newX = X;
+		2'd3: newY = Y;
+	endcase
+end
+endmodule
+
+module Fregister(clk, fclr, ld, f, q);
+input clk;
+input fclr;
+input ld;
+input [1:0] q;
+output f;
+reg [1:0] f;
+always @ (posedge clk) begin
+	if(fclr)
+		f = 2'b00;
+	else if (ld)
+		f = q;
+end
+endmodule
+
+module adder(in , out, co);
+input [1:0] in;
+output [1:0] out;
+output co;
+assign { co , out } = in + 1;
+endmodule
+
+module dff (q, dffclr, lddff, clk, co);
+input q,dffclr, lddff, clk;
+output co;
+reg co;
+always @(posedge clk)
+if (dffclr)
+co = 1'b0;
+else if (lddff)
+co = q;
+endmodule
+
+module mux(i0, i1, select, out);
+input [3:0] i0 , i1;
+input select;
+output [3:0] out;
+assign out = select == 1'b1 ? i0 : i1;
+endmodule
+
+module pointRegisterX(clk, xyclr, ld, out, q);
+input clk, xyclr;
+input ld;
+input [3:0] q;
+output [3:0] out;
+reg [3:0] out;
+always @ (posedge clk) begin
+	if (xyclr)
+		out = 4'b0;
+	else if (ld)
+		out = q;
+	end
+endmodule
+
+module pointRegisterY(clk, xyclr, ld, out, q);
+input clk, xyclr;
+input ld;
+input [3:0] q;
+output [3:0] out;
+reg [3:0] out;
+always @ (posedge clk) begin
+	if (xyclr)
+		out = 4'b1111;
+	else if (ld)
+		out = q;
+	end
+endmodule
+
+module stack(clk, stackclr, pop, push, r, w, empty);
+output empty;
+input clk, r, w;
+input stackclr;
+input [1:0] push;
+output [1:0] pop;
+reg [1:0] pop;
+reg [1:0] temp [63:0];
+integer p = 0;
+assign empty = (r == 1 & p == 0) ? 1'b1 : 1'b0;
+always @ (posedge clk) begin
+	if (stackclr) begin
+	p = 1'b0;
+	end
+	else if (r == 1 & p != 0)
+	begin 
+	p = p - 1;
+	pop = temp[p];
+	end
+	else if(w == 1 & p != 63)
+	begin
+	temp[p] = push;
+	p = p + 1;
+
+	end
+end
+endmodule
+
+module direction(clk, pop, push, r, w);
+input clk, r, w;
+input [1:0] push;
+output [1:0] pop;
+reg [1:0] pop;
+reg [1:0] temp [63:0];
+integer p = 0;
+always @ (posedge clk) begin
+	if (r == 1 & p != 1)
+	begin
+	p = p - 1; 
+	pop = temp[p];
+	end
+	else if(w == 1 & p != 63)
+	begin
+	temp[p] = push;
+	p = p + 1;
+	end
+end
+endmodule
+
+

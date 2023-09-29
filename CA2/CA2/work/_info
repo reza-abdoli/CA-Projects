@@ -1,0 +1,388 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/abdoli/Documents/Lessons/DLD LAB/Spring 1402/CAS/CA4
+valu
+Z0 !s110 1685496275
+!i10b 1
+!s100 V4M?6W>FLVk@LfkWQ^Db<3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IhK`JL_DBzUmWYz4Q51SA93
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2
+w1685489294
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/alu.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/alu.v
+!i122 160
+L0 1 42
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1685496275.000000
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/alu.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vcontroller
+!s110 1685517640
+!i10b 1
+!s100 zj@2z=gkTdZ=4MH^8R08a1
+R1
+IXFDlkZ83eVM@>FkVlS_b]3
+R2
+R3
+w1685517631
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/controller.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/controller.v
+!i122 168
+L0 1 75
+R4
+r1
+!s85 0
+31
+!s108 1685517640.000000
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/controller.v|
+!i113 1
+R6
+R7
+vdataMemory
+!s110 1685507787
+!i10b 1
+!s100 dz74Qnd8<396n<a[iQfcT3
+R1
+IVAQ<YWbWk;K1^4C4IVXH^0
+R2
+R3
+w1685507782
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/dataMemory.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/dataMemory.v
+!i122 165
+Z8 L0 1 10
+R4
+r1
+!s85 0
+31
+!s108 1685507787.000000
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/dataMemory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/dataMemory.v|
+!i113 1
+R6
+R7
+ndata@memory
+vdatapath
+!s110 1685520615
+!i10b 1
+!s100 G>`n^UJW[bT59aNDDg5>F1
+R1
+I>Pk6VA>POj62:H=nD]`O^3
+R2
+R3
+w1685520610
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/datapath.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/datapath.v
+!i122 173
+L0 1 36
+R4
+r1
+!s85 0
+31
+!s108 1685520615.000000
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/datapath.v|
+!i113 1
+R6
+R7
+vextend
+R0
+!i10b 1
+!s100 hKFg<gCQ9Z`S@bZMZPcob1
+R1
+ICbYaGPaLKWJ[hKO_Z;zE`3
+R2
+R3
+w1685485766
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/extend.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/extend.v
+!i122 158
+L0 1 26
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/extend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/extend.v|
+!i113 1
+R6
+R7
+vinstructionMemory
+Z9 !s110 1685496274
+!i10b 1
+!s100 _YBM_MhRf<?`fehJUenfc3
+R1
+I>]fldReC2ANSncz6OfmhC3
+R2
+R3
+w1685441711
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/instructionMemory.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/instructionMemory.v
+!i122 151
+Z10 L0 1 12
+R4
+r1
+!s85 0
+31
+Z11 !s108 1685496274.000000
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/instructionMemory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/instructionMemory.v|
+!i113 1
+R6
+R7
+ninstruction@memory
+vmux2to1
+R9
+!i10b 1
+!s100 3[2`md=67ReI`9n6X=7BD2
+R1
+I[M^J?=0zF5F7Eh9Fm_9OH2
+R2
+R3
+w1684548752
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux2to1.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux2to1.v
+!i122 155
+Z12 L0 1 6
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux2to1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux2to1.v|
+!i113 1
+R6
+R7
+vmux4to1
+!s110 1685511338
+!i10b 1
+!s100 k^Lo>8G5PEcKV8fa7zED51
+R1
+IDbfH9>UaTXI@ng:LWDN[23
+R2
+R3
+w1685511331
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux4to1.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux4to1.v
+!i122 166
+R10
+R4
+r1
+!s85 0
+31
+!s108 1685511338.000000
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux4to1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/mux4to1.v|
+!i113 1
+R6
+R7
+vpcCounter
+R9
+!i10b 1
+!s100 >m:OW49z]>z^SMPCAW>CT0
+R1
+I]3d]T_XJ@VAL:dZVSej2z3
+R2
+R3
+w1685436677
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcCounter.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcCounter.v
+!i122 154
+Z13 L0 1 8
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcCounter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcCounter.v|
+!i113 1
+R6
+R7
+npc@counter
+vpcImmCounter
+R0
+!i10b 1
+!s100 bAaH:EZDEgRZH?<B>JleK0
+R1
+IIa19:0KgCW:4N2f1J^7@f0
+R2
+R3
+w1684662553
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcImmCounter.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcImmCounter.v
+!i122 159
+R12
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcImmCounter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/pcImmCounter.v|
+!i113 1
+R6
+R7
+npc@imm@counter
+vprogramCounter
+R9
+!i10b 1
+!s100 oKV5<Rm]>0oZ]J?SA0?R30
+R1
+ITVKgJ9^^nDX3^JAm`3KZ`0
+R2
+R3
+w1685434972
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/programCounter.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/programCounter.v
+!i122 153
+R10
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/programCounter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/programCounter.v|
+!i113 1
+R6
+R7
+nprogram@counter
+vRegFile
+!s110 1685518811
+!i10b 1
+!s100 f28QS@UMlF7ORPm4C]TfQ3
+R1
+I@SL9]7Lca@=E?eHU;VAUU2
+R2
+R3
+w1685518804
+Z14 8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/registerFile.v
+Z15 FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/registerFile.v
+!i122 171
+L0 1 21
+R4
+r1
+!s85 0
+31
+!s108 1685518811.000000
+Z16 !s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/registerFile.v|
+Z17 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/registerFile.v|
+!i113 1
+R6
+R7
+n@reg@file
+vregister
+!s110 1684547157
+!i10b 1
+!s100 6a>DY3k3X^KO13DWMZ`n?1
+R1
+Ii9id3[RbSE3XkV9GQaY[j3
+R2
+R3
+w1684544725
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/register.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/register.v
+!i122 6
+R13
+R4
+r1
+!s85 0
+31
+!s108 1684547157.000000
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/register.v|
+!i113 1
+R6
+R7
+vregisterFile
+!s110 1684544382
+!i10b 1
+!s100 :0`GkbgG?3?^Y<^X[N^lk1
+R1
+I<al6B_Qi_f;RJ7id>719;3
+R2
+R3
+w1684544379
+R14
+R15
+!i122 0
+L0 1 5
+R4
+r1
+!s85 0
+31
+!s108 1684544382.000000
+R16
+R17
+!i113 1
+R6
+R7
+nregister@file
+vtopLevel
+R0
+!i10b 1
+!s100 1bWTbeXf77RbZ?2imPR6H2
+R1
+I2oM_aEaoc8NZg<3B@1eeS1
+R2
+R3
+w1685496269
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevel.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevel.v
+!i122 162
+R13
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevel.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevel.v|
+!i113 1
+R6
+R7
+ntop@level
+vtopLevelTB
+R0
+!i10b 1
+!s100 9]:n`RV9XWG?4Y?8h>39K0
+R1
+I;CcHZ2]B7ghZ<E_=DiR_60
+R2
+R3
+w1685496002
+8C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevelTB.v
+FC:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevelTB.v
+!i122 163
+R8
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevelTB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAs/CA2/topLevelTB.v|
+!i113 1
+R6
+R7
+ntop@level@t@b

@@ -1,0 +1,43 @@
+module datapath(clk,rst,adrSrc,IRWrite,memWrite,resultSrc, aluControl,aluSrcA,aluSrcB,immSrc,regWrite,branch1,branch2,pcUpdate,inStr);
+input clk,rst,adrSrc,IRWrite,memWrite,regWrite,branch1,branch2,pcUpdate;
+
+input [1:0] resultSrc,aluSrcA,aluSrcB;
+input [2:0] aluControl,immSrc;
+
+wire [31:0] outPc,outMuxPc,srcA,outData,outAluR,oldPc, readdata1,readdata2,immExt,outSrcA,outSrcB,srcB,aluResult,readData,result,outPcCounter,outMuxAE;
+output [31:0] inStr;
+wire pcSrc;
+
+wire [31:0] max;
+
+
+programCounter programcounter(clk,rst,pcSrc,result,outPc);
+mux2to1 m2to1(adrSrc,outPc,result,outMuxPc);
+
+instr_dataMem IDmem(outMuxPc,readData,clk,srcB,memWrite,adrSrc);//----
+twoInOutRegID twoInOutR(clk,IRWrite,outPc,readData,oldPc,inStr);
+Register regR(clk,readData,outData);
+
+RegFile registerfile(clk, inStr[19:15], inStr[24:20], inStr[11:7], result, regWrite, readdata1, readdata2, max);
+
+Register regA(clk,readdata1,srcA);
+Register regB(clk,readdata2,srcB);
+
+mux4to1 muxUP(aluSrcA,outPc,oldPc,srcA,32'bz,outSrcA);
+mux4to1 muxDOWN(aluSrcB,srcB,immExt,32'd4,32'bz,outSrcB);
+
+extend Extend(immSrc,inStr[31:7],immExt);
+
+wire zero,slt_check;
+alu Alu(aluControl,outSrcA,outSrcB,zero,slt_check,aluResult);//----zero
+//mux2to1 m2to1AluEx(selLUI,aluResult,immExt,outMuxAE);
+
+Register aluR(clk,aluResult,outAluR);
+
+mux4to1 mux4To1Result(resultSrc,outAluR,aluResult,outData,immExt,result);
+wire x,y;
+assign x = (branch2 & (slt_check ^ inStr[12]));
+assign y = (branch1 & (zero ^ inStr[12]));
+assign pcSrc = (pcUpdate | y | x);
+
+endmodule

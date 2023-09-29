@@ -1,0 +1,75 @@
+module controller(rst,op,f3,f7,resultSrc,memWrite,aluControl,aluSrc,immSrc,regWrite,sel1,branch1,branch2,jmp);
+input [6:0] op;
+input [2:0] f3;
+input [6:0] f7;
+input rst;
+output reg branch1,branch2,jmp;
+reg [3:0] aluOp;
+output reg memWrite,aluSrc,regWrite,sel1;
+output reg[1:0] resultSrc;
+output reg[2:0] aluControl,immSrc;
+
+assign memWrite = rst ? 1'b0 : memWrite;
+
+//assign pcSrc = ((zero & branch) | jmp);
+always @ (*) begin	//control unit
+	case(op) 
+		7'd51: begin sel1=0;branch1=0;branch2=0;jmp=0;resultSrc=2'b00;memWrite=0;aluSrc=0;immSrc=3'bxxx;regWrite=1; end // R - T
+		
+		7'd3: begin sel1=0;branch1=0;branch2=0;jmp=0;resultSrc=2'b01;memWrite=0;aluSrc=1;immSrc=3'b000;regWrite=1; end // I - T
+
+		7'd19: begin sel1=0;branch1=0;branch2=0;jmp=0;resultSrc=2'b00;memWrite=0;aluSrc=1;immSrc=3'b000;regWrite=1; end // I - T
+
+		7'd35: begin sel1=0;branch1=0;branch2=0;jmp=0;resultSrc=2'bxx;memWrite=1;aluSrc=1;immSrc=3'b001;regWrite=0; end // S - T
+
+		7'd55: begin sel1=0;branch1=0;branch2=0;jmp=0;resultSrc=2'b11;memWrite=0;aluSrc=1;immSrc=3'd3;regWrite=1; end // U - T
+
+		7'd99: begin sel1=0;jmp=0;resultSrc=2'bxx;memWrite=0;aluSrc=0;immSrc=3'd2;regWrite=0; end // B - T
+
+		7'd103: begin sel1=1;branch1=0;branch2=0;jmp=1;resultSrc=2'bxx;memWrite=0;aluSrc=1;immSrc=3'b000;regWrite=0; end // I - T
+	
+		7'd111: begin sel1=0;branch1=0;branch2=0;jmp=1;resultSrc=2'bxx;memWrite=0;aluSrc=1;immSrc=3'd4;regWrite=0; end // J - T
+	endcase
+end
+
+always @ (*) begin
+	case(op)
+		7'd51: aluOp=4'd0;
+		7'd3: aluOp=4'd1;
+		7'd19: aluOp=4'd2;
+		7'd35: aluOp=4'd3;
+		7'd99: aluOp=4'd4;
+		7'd103: aluOp=4'd5;
+	endcase
+
+end
+
+always @ (*) begin	//alu control
+	casex({aluOp,f3,f7})
+		14'b0: aluControl=3'b0;
+		14'b00000000100000: aluControl=3'b001;
+		14'b00000100000000: aluControl=3'b100;
+		14'b00001100000000: aluControl=3'b011;
+		14'b00001110000000: aluControl=3'b010;
+
+		14'b0001010xxxxxxx: aluControl=3'b0;
+
+		14'b0010000xxxxxxx: aluControl=3'b0;
+		14'b0010010xxxxxxx: aluControl=3'b100; // slti
+		14'b0010100xxxxxxx: aluControl=3'b101;
+		14'b0010110xxxxxxx: aluControl=3'b011;
+		14'b0010111xxxxxxx: aluControl=3'b010;
+
+		14'b0011010xxxxxxx: aluControl=3'b000;
+
+		14'b0100000xxxxxxx: begin aluControl=3'b001; branch1=1;branch2=0; end // B-T
+		14'b0100001xxxxxxx: begin aluControl=3'b001; branch1=1;branch2=0; end
+		14'b0100100xxxxxxx: begin aluControl=3'b010; branch1=0;branch2=1; end
+		14'b0100101xxxxxxx: begin aluControl=3'b011; branch1=0;branch2=1; end
+
+		14'b0101000xxxxxxx: aluControl=3'b000;
+	endcase
+end
+
+
+endmodule

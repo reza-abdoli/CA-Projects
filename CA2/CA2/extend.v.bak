@@ -1,0 +1,26 @@
+module extend(sel,in,out);
+input [2:0] sel;
+
+input [24:0] in;
+wire [6:0] temp;
+assign temp = 7'b0;
+wire [31:0] extend;
+assign extend = { in , temp };
+ 
+output reg [31:0] out;
+always @ (*) begin
+	if (sel == 3'd0) begin out = extend[31] ? { 20'b1111111111111111111 , extend[31:20] } : { 20'b00000000000000000000 , extend[31:20] }; end // i - t
+	else if(sel == 3'd1) begin 	// s - t
+		out = extend[31] ? { 20'b1111111111111111111 , extend[31:25] , extend[11:7] } : { 20'b00000000000000000000 , extend[31:25] , extend[11:7] };
+	end 
+	else if(sel == 3'd2) begin 	// b - t
+		out = extend[31] ? { 20'b1111111111111111111 , extend[31] , extend[7] , extend[30:25] , extend[11:8] } : { 20'b00000000000000000000 , extend[31] , extend[7] , extend[30:25] , extend[11:8] };
+	end
+	else if(sel == 3'd3) begin // u - t
+		out = extend[31] ? { 12'b111111111111 , extend[31:12] } : { 12'b000000000000 , extend[31:12] };
+	end
+	else if(sel == 3'd4) begin // j - t
+		out = extend[31] ? { 12'b111111111111 , extend[31] , extend[19:12] , extend[20] , extend[30:21] } : { 12'b000000000000 , extend[31] , extend[19:12] , extend[20] , extend[30:21] };
+	end
+end
+endmodule

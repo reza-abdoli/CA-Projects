@@ -1,0 +1,92 @@
+{C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/mux4to1.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/mux4to1.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux4to1
+
+Top level modules:
+	mux4to1
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/alu.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/alu.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/controller.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/controller.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module controller
+
+Top level modules:
+	controller
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/datapath.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/datapath.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/instr_dataMem.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/instr_dataMem.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module instr_dataMem
+
+Top level modules:
+	instr_dataMem
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/programCounter.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/programCounter.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module programCounter
+
+Top level modules:
+	programCounter
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/topLevel.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/topLevel.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module topLevel
+
+Top level modules:
+	topLevel
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/twoInOutRegID.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/twoInOutRegID.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module twoInOutRegID
+
+Top level modules:
+	twoInOutRegID
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/registerFile.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/registerFile.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/Register.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/Register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register
+
+Top level modules:
+	Register
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/extend.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/extend.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module extend
+
+Top level modules:
+	extend
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/mux2to1.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/mux2to1.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux2to1
+
+Top level modules:
+	mux2to1
+
+} {} {}} {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/topLevelTB.v} {1 {vlog -work work -stats=none {C:/Users/abdoli/Documents/Lessons/DLD2/Spring 1402/CAss/CA2/topLevelTB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module topLevelTB
+
+Top level modules:
+	topLevelTB
+
+} {} {}}

@@ -1,0 +1,10 @@
+module topLevelTB();
+reg clk,rst;
+topLevel toplevel( clk, rst);
+always #50 clk = ~clk;
+initial begin
+#5 rst=1; clk=0;
+#1 rst=0;
+#60000 $stop;
+end
+endmodule
